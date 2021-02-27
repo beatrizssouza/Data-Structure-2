@@ -39,4 +39,5 @@ int search(int mat[T][T],int lin,int col){
         aux |= search(mat,lin,col-1);
         aux |= search(mat,lin,col+1);
     }
+    return aux;
 }

@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include "labyrinth.h"
+#include "labyrinth.c"
 
 int main(){
 

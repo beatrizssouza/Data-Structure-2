@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "labyrinth.h"
 
 void loadmatrix(char* archive, int mat[T][T]){
@@ -15,7 +14,7 @@ void printmatrix(int mat[T][T]){
   for(int i = 0; i < T; i++){
     printf("[]");
       for(int j = 0; j < T; j++){
-        if(i == 0 && j == 0) printf("👱‍️ ‍️");
+        if(i == 0 && j == 0) printf("! ‍️");
         else if(mat[i][j] == BLOCK) printf("[]");
         else if(i == 9 && j == 9) printf("🏁");
         else printf("  ");

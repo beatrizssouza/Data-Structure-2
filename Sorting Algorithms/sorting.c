@@ -46,17 +46,19 @@ void selectionSort(int *vector, int quantity, int *selectionComparisons){
   }
 };
 
-void insertionSort(int* vector, int quantity, int* comparisons){
-  int j;
-  for(int i = 0; i < quantity; i++){
-    j = i;
-    while(j > 0 && vector[j - 1] > vector[j]){
-      *comparisons += 1;
-      changeElements(vector, j - 1, j);
-      j--;
+void insertionSort(int* v, int n, int* insertionComparisons){
+  int i, aux, j;
+  for(i = 1; i < n; i++) {
+    aux = v[i];
+    j = i - 1;
+    while(j >= 0 && v[j] > aux) {
+      *insertionComparisons += 1;
+      v[j + 1] = v[j];
+      j = j - 1;
     }
+    v[j + 1] = aux;
   }
-};
+}
 
 void bubbleSort(int *vector, int quantity, int *bubbleComparisons){
   int i, j;

@@ -1,2 +1,2 @@
-# ED2
-data structure 2 
+# Data-Structure-2
+repository for saving advanced data structure algorithms.

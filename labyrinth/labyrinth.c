@@ -1,5 +1,6 @@
 #include "labyrinth.h"
 
+//Get the maze from lab.txt archive
 void loadmatrix(char* archive, int mat[T][T]){
     
   FILE *arq = fopen(archive, "r");
@@ -34,13 +35,13 @@ int search(int mat[T][T],int lin,int col){
   else if(lin == 9 && col == 9) aux = 1;
   else{
     mat[lin][col] = 1;
+    //make use of recursive functions to walk through the maze
     aux = search(mat,lin-1,col);
     aux |= search(mat,lin+1,col);
     aux |= search(mat,lin,col-1);
     aux |= search(mat,lin,col+1);  
   }
-  if(aux == 1)
-    printf("posição:[%d, %d]\n", lin, col);
+  if(aux == 1) printf("position:[%d, %d]\n", lin, col);
 
   return aux;
 }

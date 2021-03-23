@@ -1,7 +1,6 @@
 #include "header.h"
 
-//Sort function
-
+//Sort function based on max heapify
 void heapSortMax(int* vector, int size){
     buildMaxHeap(vector, size);
     for(int i = size - 1; i > 0; i--){
@@ -10,6 +9,7 @@ void heapSortMax(int* vector, int size){
     }
 };
 
+//Sort function based on min heapify
 void heapSortMin(int* vector, int size){
  buildMinHeap(vector, size);
   for(int i = size - 1 ; i > 0; i--){
@@ -18,8 +18,7 @@ void heapSortMin(int* vector, int size){
   }
 };
 
-//Max heap sort functions 
-
+//Max heap functions 
 void maxHeapify(int* vector, int i, int size){
     int largest = i;
     int leftElement = left(i);
@@ -37,8 +36,7 @@ void buildMaxHeap(int* vector, int size){
     for(int i = size/2; i >= 0; i--) maxHeapify(vector, i, size);
 };
 
-//Min heap sort functions 
-
+//Min heap functions 
 void minHeapify(int* vector, int i, int size){
     int smallest = i;
     int leftElement = left(i);

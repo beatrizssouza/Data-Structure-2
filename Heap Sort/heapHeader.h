@@ -1,5 +1,5 @@
-#ifndef heapheaderh
-#define heapheaderh
+#ifndef HEAPHEADER_H
+#define HEAPHEADER_H
 
 //max
 void heapSortMax(int* vector, int size);

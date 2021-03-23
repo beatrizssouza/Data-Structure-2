@@ -1,5 +1,5 @@
-#ifndef queueheaderh
-#define queueheaderh
+#ifndef QUEUE_HEADER_H
+#define QUEUE_HEADER_H
 
 int* createQueue(int size);
 int getFirstElement(int* priorityQueue, int size);

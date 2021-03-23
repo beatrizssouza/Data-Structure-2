@@ -1,4 +1,4 @@
-#include "labyrinth.c"
+#include "labyrinth.h"
 
 int main(){
 
@@ -9,9 +9,9 @@ int main(){
   
   printmatrix(MATRIX);
   
-  printf("\nposições:\n");
-  if(search(MATRIX, 0, 0)) printf("\n\nsaída encontrada!\n\n");
-  else printf("\n\nNão existe um caminho para a saída!\n\n");
+  printf("\nposition:\n");
+  if(search(MATRIX, 0, 0)) printf("\n\nexit found!\n\n");
+  else printf("\n\nthere's no exit!\n\n");
 
   return 0;
 }

@@ -1,5 +1,5 @@
-#ifndef auxheader
-#define auxheader
+#ifndef AUX_HEADER_H
+#define AUX_HEADER_H
 
 int left(int i);
 int right(int i);

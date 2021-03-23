@@ -1,17 +1,17 @@
 #include "header.h"
 
-
+//returns a shuffled array based on seed parameter
+//and srand func
 int* randomVector(int size, int max, int seed) {
 
   int* v = (int*) calloc(size, sizeof(int));
-  
   srand(seed);
-
   for(int i = 0; i < size; i++) v[i] = rand() % max;
   
   return v;
 };
 
+//returns a sorted array from 0 to max size
 int* orderedVector(int size, int max){
 
   int* v = (int*) calloc(size, sizeof(int));
@@ -93,7 +93,7 @@ void merge(int* vector, int initialPosition, int middle, int finalPosition){
   int quantityRight = finalPosition - middle; 
 
   int* left = malloc(sizeof(int) * (quantityLeft + 1));
-  int* right = malloc(sizeof(int)* (quantityRight + 1));
+  int* right = malloc(sizeof(int) * (quantityRight + 1));
 
   for(i=0;i<quantityLeft;i++) left[i] = vector[initialPosition + i];
   
@@ -110,8 +110,7 @@ void merge(int* vector, int initialPosition, int middle, int finalPosition){
     }else{
       vector[k] = right[j];
       j++;
-    };
-  
+    }
   free(left);
   free(right);
 };

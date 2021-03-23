@@ -1,4 +1,4 @@
-#include "sortings.c"
+#include "header.h"
  
 int main() {
 

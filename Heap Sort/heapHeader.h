@@ -2,12 +2,12 @@
 #define HEAPHEADER_H
 
 //max
-void heapSortMax(int* vector, int size);
-void buildMaxHeap(int* vector, int size);
-void maxHeapify(int* vector, int i, int n);
+void heapSortMax(int* array, int size);
+void buildMaxHeap(int* array, int size);
+void maxHeapify(int* array, int i, int n);
 //min
-void heapSortMin(int* vector, int size);
-void buildMinHeap(int* vector, int size);
-void minHeapify(int* vector, int i, int size);
+void heapSortMin(int* array, int size);
+void buildMinHeap(int* array, int size);
+void minHeapify(int* array, int i, int size);
 
 #endif

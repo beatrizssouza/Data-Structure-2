@@ -1,54 +1,54 @@
 #include "header.h"
 
 //Sort function based on max heapify
-void heapSortMax(int* vector, int size){
-    buildMaxHeap(vector, size);
+void heapSortMax(int* array, int size){
+    buildMaxHeap(array, size);
     for(int i = size - 1; i > 0; i--){
-        switchElements(vector, 0, i);
-        maxHeapify(vector, 0, i);
+        switchElements(array, 0, i);
+        maxHeapify(array, 0, i);
     }
 };
 
 //Sort function based on min heapify
-void heapSortMin(int* vector, int size){
- buildMinHeap(vector, size);
+void heapSortMin(int* array, int size){
+ buildMinHeap(array, size);
   for(int i = size - 1 ; i > 0; i--){
-    switchElements(vector, 0, i);
-    minHeapify(vector, 0, i);
+    switchElements(array, 0, i);
+    minHeapify(array, 0, i);
   }
 };
 
 //Max heap functions 
-void maxHeapify(int* vector, int i, int size){
+void maxHeapify(int* array, int i, int size){
     int largest = i;
     int leftElement = left(i);
     int rightElement = right(i);
     
-    if((leftElement < size) && (vector[leftElement] > vector[i])) largest = leftElement;
-    if((rightElement < size) && (vector[rightElement] > vector[largest])) largest = rightElement;
+    if((leftElement < size) && (array[leftElement] > array[i])) largest = leftElement;
+    if((rightElement < size) && (array[rightElement] > array[largest])) largest = rightElement;
     if(largest != i){
-        switchElements(vector, i, largest);
-        maxHeapify(vector, largest, size);
+        switchElements(array, i, largest);
+        maxHeapify(array, largest, size);
     }
 };
 
-void buildMaxHeap(int* vector, int size){
-    for(int i = size/2; i >= 0; i--) maxHeapify(vector, i, size);
+void buildMaxHeap(int* array, int size){
+    for(int i = size/2; i >= 0; i--) maxHeapify(array, i, size);
 };
 
 //Min heap functions 
-void minHeapify(int* vector, int i, int size){
+void minHeapify(int* array, int i, int size){
     int smallest = i;
     int leftElement = left(i);
     int rightElement = right(i);
-    if((leftElement < size) && (vector[leftElement] < vector[i])) smallest = leftElement;
-    if((rightElement < size) && (vector[rightElement] < vector[smallest])) smallest = rightElement;
+    if((leftElement < size) && (array[leftElement] < array[i])) smallest = leftElement;
+    if((rightElement < size) && (array[rightElement] < array[smallest])) smallest = rightElement;
     if(smallest != i){
-        switchElements(vector, i, smallest);
-        minHeapify(vector, smallest, size);
+        switchElements(array, i, smallest);
+        minHeapify(array, smallest, size);
     }   
 };
 
-void buildMinHeap(int* vector, int size) {
-  for(int i = size/2; i >= 0; i--) minHeapify(vector, i, size);
+void buildMinHeap(int* array, int size) {
+  for(int i = size/2; i >= 0; i--) minHeapify(array, i, size);
 }

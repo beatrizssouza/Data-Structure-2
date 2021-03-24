@@ -1,74 +1,48 @@
 #include "header.h"
- 
+
 int main() {
 
+  int comparisons = 0;
   clock_t time;
-  
-  // int* v = randomVector(N, MAX_VALUE, SEED);
-  int* v = orderedVector(N, MAX_VALUE);
 
-  // selection sort
-
+  //selection sort
+  int* v1 = randomVector(N, MAX_VALUE, SEED);
   time = clock();
-  selectionSort(v, N);
+  selectionSort(v1, N, &comparisons);
   time = clock() - time;
-  printf("Selection sort\n");
+  printf("Selection sort comparisons: %d\n", comparisons);
   printf("Execution time was: %f seconds\n\n",((float)time)/CLOCKS_PER_SEC);
-  
-  free(v);
-  v = NULL;
-  
+
   //insertion sort
+  comparisons = 0;
+  time = 0;
+  int* v2 = randomVector(N, MAX_VALUE, SEED);
 
-  // v = randomVector(N, MAX_VALUE, SEED);
-  v = orderedVector(N, MAX_VALUE);
   time = clock();
-  insertionSort(v, N);
+  insertionSort(v2, N, &comparisons);
   time = clock() - time;
-  printf("Insertion sort\n");
-  printf("Execution time was: %f seconds\n\n",((float)time)/CLOCKS_PER_SEC);
-  
-  free(v);
-  v = NULL;
 
-  //merge sort
-  
-  // v = randomVector(N, MAX_VALUE, SEED);
-  v = orderedVector(N, MAX_VALUE);
-  time = clock();
-  mergeSort(v, 0, N);
-  time = clock() - time;
-  printf("Merge sort\n");  
+  printf("Insertion sort comparisons: %d\n", comparisons);
   printf("Execution time was: %f seconds\n\n",((float)time)/CLOCKS_PER_SEC);
-  
-  free(v);
-  v = NULL;
-
-  //quick sort
-
-  //v = randomVector(N, MAX_VALUE, SEED);
-  v = orderedVector(N, MAX_VALUE);
-  time = clock();
-  quickSort(v, 0, N);
-  time = clock() - time;
-  printf("quick sort\n");  
-  printf("Execution time was: %f seconds\n\n",((float)time)/CLOCKS_PER_SEC);
-  
-  free(v);
-  v = NULL;
 
   //bubble sort
+  comparisons = 0;
+  time = 0;
+  int* v3 = randomVector(N, MAX_VALUE, SEED);
 
-  // v = randomVector(N, MAX_VALUE, SEED);
-  v = orderedVector(N, MAX_VALUE);
   time = clock();
-  bubbleSort(v, N);
-  time = clock() - time;
-  printf("Bubble sort\n");  
+  bubbleSort(v3, N, &comparisons);
+  time = clock() - time;  
+  
+  printf("Bubble sort comparisons: %d\n", comparisons);
   printf("Execution time was: %f seconds\n\n",((float)time)/CLOCKS_PER_SEC);
   
-  free(v);
-  v = NULL;
-
+  free(v1);
+  free(v2);
+  free(v3);
+  v1 = NULL;
+  v2 = NULL;
+  v3 = NULL;
+  
   return 0;
 }

@@ -1,26 +1,20 @@
-#ifndef HEADER_H
+#ifndef HEADER_H 
 #define HEADER_H
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <limits.h>
 
-#define N 500000
-#define MAX_VALUE N*100
+#define N 10000
+#define MAX_VALUE 1000
 #define SEED 0
 
 int* randomVector(int size, int max, int seed);
-int* orderedVector(int size, int max);
 void printVector(int* vector, int length);
-int maxValue(int *vector, int initialPosition, int finalPosition);
+int maxValue(int *vector, int initialPosition, int finalPosition, int *comparisons);
 void changeElements(int* vector, int position, int nextPosition);
-void selectionSort(int *vector, int quantity);
-void insertionSort(int* vector, int quantity);
-void bubbleSort(int *vector, int quantity);
-void mergeSort(int *vector, int left, int right);
-void merge(int* vector, int initialPosition, int middle, int finalPosition);
-void quickSort(int* vector, int left, int right);
-int partition(int* vector, int p, int r);
+void selectionSort(int *vector, int quantity, int *selectionComparisons);
+void insertionSort(int* vector, int quantity, int* comparisons);
+void bubbleSort(int *vector, int quantity, int *bubbleComparisons);
 
 #endif

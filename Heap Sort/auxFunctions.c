@@ -12,8 +12,8 @@ int root(int i){
   return (i - 1) / 2;
 }
 
-void switchElements(int* vector, int position, int newPosition){
-  int aux = vector[position];
-  vector[position] = vector[newPosition];
-  vector[newPosition] = aux;
+void switchElements(int* array, int position, int newPosition){
+  int aux = array[position];
+  array[position] = array[newPosition];
+  array[newPosition] = aux;
 };

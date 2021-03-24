@@ -1,5 +1,5 @@
-#ifndef header
-#define header
+#ifndef HEADER_H
+#define HEADER_H
 
 #include "heapHeader.h"
 #include "queueHeader.h"

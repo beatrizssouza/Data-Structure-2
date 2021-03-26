@@ -14,11 +14,9 @@ void countingSortB(int* vector, int size, int div, int base, int* temp){
 
   #define DIGIT_BIN(x) (x >> div) & 1
   
-  for(int i = 0; i < size; i++){
-    c[DIGIT_BIN(vector[i])]++;
-  }
+  for(int i = 0; i < size; i++) c[DIGIT_BIN(vector[i])]++;
 
-  for(int i = 0; i < base; i++) {
+  for(int i = 0; i < base; i++){
     int aux = c[i]; 
     c[i] = acumulated; 
     acumulated += aux;

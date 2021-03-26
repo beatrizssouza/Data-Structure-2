@@ -21,8 +21,8 @@ int main(){
   printVector(vector, N);
   #endif
   
-  printf("verifying it the vector is sorted.. ");
-  if(verifySortedVector(vector, N)) printf("it its!\n");
+  printf("verifying if the vector is sorted.. ");
+  if(verifySortedVector(vector, N)) printf("it is!\n");
   else printf("its not!\n");
 
   vector = randomVector(N, MAX, SEED);
@@ -42,8 +42,8 @@ int main(){
   printVector(vector, N);
   #endif
   
-  printf("verifying it the vector is sorted.. ");
-  if(verifySortedVector(vector, N)) printf("it its!\n");
+  printf("verifying if the vector is sorted.. ");
+  if(verifySortedVector(vector, N)) printf("it is!\n");
   else printf("its not!\n");
   
   return 0;

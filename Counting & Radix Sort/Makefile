@@ -4,3 +4,5 @@ all:
 	gcc -Wall -c vector.c
 	gcc -Wall -o main main.o vector.o radixSort.o
 	./main
+	del *.o
+	del main.exe

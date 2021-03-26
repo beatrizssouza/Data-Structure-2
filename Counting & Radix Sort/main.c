@@ -1,22 +1,13 @@
-#include <stdio.h>
-#include <time.h>
-#include "radixHeader.h"
-#include "vector.h"
-#define N 1000
-#define MAX N * 100
-#define SEED 0
-#define DEBUG 0
+#include "mainData.h"
 
 int main(){
-
-  clock_t t;
   
   printf("%d elements\n", N);
   
   int* vector = randomVector(N, MAX, SEED);
 
   #if DEBUG 
-  printf("printando vetor desordenado\n");
+  printf("printing unordered vector\n");
   printVector(vector, N);
   #endif
   
@@ -26,14 +17,18 @@ int main(){
   printf("decimal execution time(ms): %f\n", ((float)t/(CLOCKS_PER_SEC/1000)));
   
   #if DEBUG 
-  printf("printando vetor ordenado\n");
+  printf("printando ordered vector\n");
   printVector(vector, N);
   #endif
   
+  printf("verifying it the vector is sorted.. ");
+  if(verifySortedVector(vector, N)) printf("it its!\n");
+  else printf("its not!\n");
+
   vector = randomVector(N, MAX, SEED);
   
   #if DEBUG 
-  printf("printando vetor desordenado\n");
+  printf("printing unordered vector\n");
   printVector(vector, N);
   #endif
   
@@ -43,9 +38,13 @@ int main(){
   printf("binary execution time(ms): %f\n", ((float)t/(CLOCKS_PER_SEC/1000)));
   
   #if DEBUG 
-  printf("printando vetor ordenado\n");
+  printf("printando ordered vector\n");
   printVector(vector, N);
   #endif
+  
+  printf("verifying it the vector is sorted.. ");
+  if(verifySortedVector(vector, N)) printf("it its!\n");
+  else printf("its not!\n");
   
   return 0;
 

@@ -15,3 +15,11 @@ void printVector(int* vector, int size){
     printf("%s", i == size - 1 ? "]\n" : ", ");
   }
 };
+
+bool verifySortedVector(int* vector, int size){
+  for(int i = 0; i < size; i++){
+    if(vector[i] <= vector[i + 1]) break;
+    else printf("%d, %d", vector[i], vector[i + 1]);
+  }
+  return true;
+}

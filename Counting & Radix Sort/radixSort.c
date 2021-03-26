@@ -34,7 +34,7 @@ void countingSortD(int* vector, int size, int div, int base, int* temp){
   int acumulated = 0;
   int* c = calloc(base, sizeof(int));
 
-  #define DIGIT(x) (x / div) % base
+  #define DIGIT(x) (x / div) % base 
 
   for(int i = 0; i < size; i++) c[DIGIT(vector[i])]++;
   for(int i = 0; i < base; i++){
@@ -61,6 +61,7 @@ void radixSort(int* vector, int size, int base){
       largestElement /= 2;
     }
   }
+  
   else{
     while(largestElement > 0){
       countingSortD(vector, size, div, base, temp);
@@ -70,4 +71,5 @@ void radixSort(int* vector, int size, int base){
   }
   free(temp);
 }
+
 
